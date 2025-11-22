@@ -67,7 +67,7 @@ mod_lista_itens_ui <- function(id, titulo, lista_dados) {
 
 # --- Lógica do Servidor para o Módulo ---
 mod_lista_itens_server <- function(id, lista_dados) {
-  moduleServer(id, function(input, output, session) {
+  shiny::moduleServer(id, function(input, output, session) {
     
     # Percorre a lista de dados para criar um observador para CADA botão de item
     lapply(lista_dados, function(item) {
