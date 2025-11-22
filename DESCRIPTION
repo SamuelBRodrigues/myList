@@ -1,21 +1,25 @@
 Package: myList
-Title: O Seu Site de Lista de Casamento em Shiny
+Title: O Seu Site de Lista de Casamento em Shiny.
 Version: 0.0.0.9000
 Authors@R: 
-    person("Rodrigues", "Samuel", , "sam.baraque@gmail.com", role = c("aut", "cre"))
+    person(given = "Samuel",
+           family = "Rodrigues",
+           role = c("aut", "cre"),
+           email = "sam.baraque@gmail.com")
 Description: Uma aplicação Shiny/golem para gerenciar e exibir a lista de presentes de casamento, com foco em doações via Pix.
 License: MIT + file LICENSE
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
 Imports: 
     bslib,
+    config,
     golem,
     htmltools,
     magrittr,
     shiny,
     shinyjs,
-    slickR
+    swipeR
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
 Suggests: 
     knitr,
     testthat
