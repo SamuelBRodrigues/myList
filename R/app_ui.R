@@ -11,7 +11,6 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Início da UI real: Usando bslib::page_fluid para tema e responsividade
     bslib::page_fluid(
-      title = "Nossa Lista de Casamento 🥂",
       
       # 🎨 CONFIGURAÇÃO DO TEMA BSLIB (COM AS FONTES OVO e GREAT VIBES)
       theme = bslib::bs_theme(
@@ -19,7 +18,7 @@ app_ui <- function(request) {
         bootswatch = "yeti",        # Tema base limpo e moderno
         bg = "#ffffffff",             # Cor de fundo: Branco
         fg = "#000000ff",             
-        primary = "#000000ff",        # Cor primária (Botões): Tom de vermelho/rosa
+        primary = "#000000ff",        # Cor primária (Botões): Preto
         secondary = "#A0A0A0",      
         
         # DEFINIÇÃO DAS FONTES GOOGLE
@@ -43,7 +42,7 @@ app_ui <- function(request) {
         # Roleta de Presentes Simbólicos
         mod_lista_itens_ui(
           id = "itens_simbolicos",
-          titulo = "☕ Mimos para o Nosso Novo Lar",
+          titulo = "Para você dizer que deu alguma coisa",
           lista_dados = golem::get_golem_options("lista_itens_simbolicos")
         ),
 
@@ -52,7 +51,7 @@ app_ui <- function(request) {
         # Roleta de Roleta de Presentes Relacionado a Cozinha
         mod_lista_itens_ui(
           id = "itens_cozinha",
-          titulo = "☕ Mimos para o Nosso Novo Lar",
+          titulo = "🍲 Cozinha",
           lista_dados = golem::get_golem_options("lista_itens_cozinha")
         ),
 
@@ -61,7 +60,7 @@ app_ui <- function(request) {
         # Roleta de Presentes Relacionado a Cama, Mesa e Banho
         mod_lista_itens_ui(
           id = "itens_cama_mesa_banho",
-          titulo = "☕ Mimos para o Nosso Novo Lar",
+          titulo = "🛌 Cama, Mesa e Banho",
           lista_dados = golem::get_golem_options("lista_itens_cama_mesa_banho")
         ),
 
@@ -69,8 +68,8 @@ app_ui <- function(request) {
 
         # Roleta de Presentes de Alto Valor
         mod_lista_itens_ui(
-          id = "itens_cama_mesa_banho",
-          titulo = "✈️ Presentes para a Lua de Mel",
+          id = "lista_itens_alto_valor",
+          titulo = "💰 Aqui é pra quem tem dinheiro 💰",
           # A variável lista_itens_alto_valor é globalmente acessível
           lista_dados = golem::get_golem_options("lista_itens_alto_valor")
         ),
@@ -102,10 +101,14 @@ golem_add_external_resources <- function() {
   )
 
   shiny::tags$head(
-    favicon(),
+    shiny::tags$link(
+      rel = "shortcut icon",
+      # Substitua "minha_imagem.png" pelo nome do seu arquivo ou URL
+      href = "www/Gemini_Generated_Image_1ku2qf1ku2qf1ku2.png" 
+    ),
     bundle_resources(
       path = app_sys("app/www"),
-      app_title = "myList"
+      app_title = "Nossa Lista de Casamento"
     )
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()
