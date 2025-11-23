@@ -10,7 +10,7 @@ item_card_ui <- function(id, nome, valor, descricao, imagem_path, simbolico, lin
   # 1. Botão de Contribuição PIX (Comum a ambos os tipos de lista)
   pix_button <- shiny::actionButton(
     inputId = id, # ID único para o botão.
-    label = "Contribuir com Pix",
+    label = shiny::tagList(shiny::icon("qrcode"), "Contribuir com Pix"),
     class = "btn-primary btn-pix mt-2",
     style = "background-color: #5cb85c; border-color: #4cae4c; width: 100%;" # Estilo de largura total
   )
@@ -18,7 +18,7 @@ item_card_ui <- function(id, nome, valor, descricao, imagem_path, simbolico, lin
   #Botão de Pagamento com Cartão (Action Button)
   cartao_button <- shiny::actionButton(
     inputId = base::paste0(id, "_cartao"),
-    label = "Pagar com Cartão",
+    label = shiny::tagList(shiny::icon("credit-card"), "Pagar com Cartão"),
     class = "btn-info mt-2",
     style = "width: 100%; background-color: #337ab7; border-color: #2e6da4;" # Estilo de largura total
   )
@@ -45,7 +45,7 @@ item_card_ui <- function(id, nome, valor, descricao, imagem_path, simbolico, lin
       class = "btn btn-secondary mt-2",
       role = "button",
       style = "width: 100%; margin-top: 5px; background-color: #ff9900; border-color: #e68a00;",
-      "Ver na Amazon"
+      shiny::tagList(shiny::icon("shopping-basket"), "Ver na Amazon")
     )
     
     # 3. Botão de Redirecionamento para Mercado Livre (Link <a>)
@@ -55,7 +55,7 @@ item_card_ui <- function(id, nome, valor, descricao, imagem_path, simbolico, lin
       class = "btn btn-secondary mt-2",
       role = "button",
       style = "width: 100%; margin-top: 5px; background-color: #ffe600; border-color: #ccb300; color: #000; font-weight: bold;",
-      "Ver no Mercado Livre"
+      shiny::tagList(shiny::icon("shopping-basket"), "Ver no Mercado Livre")
     )
     
     # Agrupa todos os botões e o separador
